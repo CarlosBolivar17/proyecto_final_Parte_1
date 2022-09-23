@@ -1,0 +1,38 @@
+{% extends "AppCoder/file_herencia.html"%}
+
+{% load static %}
+
+{% block titulo %}
+
+<form action="/AppCoder/respuesta/" method="GET"> {% csrf_token %}
+
+    <p>Ingrese categoria </p>
+
+    <select name="Categoria">
+        <option value=""> seleccionar todas los gastos de una categoria</option>
+        <option value="ocio">Ocio</option>
+        <option value="basico">Basico</option>
+        <option value="varios">Varios</option>
+    </select>
+    <input type="submit" value="buscar" />
+
+
+</form>
+
+<h4>Resultados para la categoria: {{Categoria}}</h4>
+
+{% for M in modelo %}
+
+
+<ul>
+
+    <li>Nombre del importe: {{M.Importe_asociado}}</li>
+    <li>Gasto asociado: {{M.Importe_gastado}}</li>   
+    <li>Fecha del importe: {{M.Fecha_importe}}</li>
+
+
+</ul>
+
+{% endfor %}
+
+{% endblock %}
