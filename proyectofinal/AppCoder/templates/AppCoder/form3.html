@@ -1,0 +1,20 @@
+{% extends "AppCoder/file_herencia.html"%}
+
+{% load static %}
+
+{% block titulo %}
+<form action="/AppCoder/form3/" method="POST"> {% csrf_token %}
+
+    <p>Ingrese en gastos varios </p>
+
+    <p> Nombre del importe: <input type="text" name="Importe_asociado" /> </p>
+
+    <p> Cantidad del importe: <input type="number" name="Importe_gastado" />  </p>
+
+    <p> Fecha del importe <input type="date" name="Fecha_importe" />  </p>
+
+    <input type="submit" value="enviar informacion" />
+
+
+</form>   
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "AppCoder/file_herencia.html"%}
+
+{% load static %}
+
+{% block titulo %}
+
+<form action="/AppCoder/respuesta/" method="GET"> {% csrf_token %}
+
+    <p>Ingrese categoria </p>
+
+    <select name="Categoria">
+        <option value=""> seleccionar todas los gastos de una categoria</option>
+        <option value="ocio">Ocio</option>
+        <option value="basico">Basico</option>
+        <option value="varios">Varios</option>
+    </select>
+    <input type="submit" value="buscar" />
+
+
+</form>   
+
+{% endblock %}
